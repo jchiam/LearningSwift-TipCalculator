@@ -45,9 +45,10 @@ class ViewController: UIViewController {
         var keys = Array(possibleTips.keys)
         keys.sortInPlace()
         for tipPct in keys {
-            let tipValue = possibleTips[tipPct]!
+            let (tipValue, total) = possibleTips[tipPct]!
             let prettyTipValue = String(format: "%0.2f", tipValue)
-            results += "\(tipPct)%: \(prettyTipValue)\n"
+            let prettyTotal = String(format: "%0.2f", total)
+            results += "\(tipPct)%: \(prettyTipValue)\tTotal: \(prettyTotal)\n"
         }
         
         resultsTextView.text = results
